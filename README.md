@@ -16,9 +16,9 @@ the config into djmail. You'll need to call djmail.config.update_djmail_config()
 method once on startup and pass the relevant configuration as a dictionary. e.g.
 
 ```
-from djmail.config import djmail_update_config
+from djmail.config import update_djmail_config
 
-djmail_update_config({"EMAIL_HOST": "mysmtp.server.com", "EMAIL_PORT": 255})
+update_djmail_config({"EMAIL_HOST": "mysmtp.server.com", "EMAIL_PORT": 255})
 ```
 
 You can call djmail_update_config as many times as you wish.
