@@ -13,6 +13,12 @@ config = {
     "EMAIL_HOST_USER": None,
     "EMAIL_HOST_PASSWORD": None,
     "EMAIL_USE_TLS": False,
+
+    # For the SES.
+    "AWS_KEY": "",
+    "AWS_SECRET": "",
+    "AWS_SES_AUTO_THROTTLE": 0.5,
+    "AWS_SES_RETURN_PATH": "",
 }
 
 def update_djmail_config( new_config):

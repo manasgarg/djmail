@@ -70,6 +70,16 @@ def send_mass_mail(datatuple, fail_silently=False, auth_user=None,
                 for subject, message, sender, recipient in datatuple]
     return connection.send_messages(messages)
 
+def send_alternative_mail(subject, message, from_email, recipient_list, 
+                fail_silently=False, connection=None, html_message=None):
+    """Sends a multipart/alternative message."""
+
+    mail = EmailMultiAlternatives(subject,
+                message, from_email, recipient_list,
+                connection=connection)
+    if html_message:
+        mail.attach_alternative(html_message, 'text/html')
+    mail.send(fail_silently=fail_silently)
 
 def mail_admins(subject, message, fail_silently=False, connection=None,
                 html_message=None):
