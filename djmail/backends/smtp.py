@@ -6,6 +6,7 @@ import threading
 from base import BaseEmailBackend
 from djmail.utils import DNS_NAME
 from djmail.message import sanitize_address
+from djmail.config import config
 
 class EmailBackend(BaseEmailBackend):
     """
